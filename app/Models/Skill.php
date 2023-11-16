@@ -13,4 +13,17 @@ class Skill extends SluggableModel
     {
         return route('skill', ['skillSlug' => $this->slug]);
     }
+
+    /**
+     * Retorna todos os registros da tabela "skills" como um array.
+     *
+     * @return array
+     */
+    public static function getAllSkillsAsArray(): array
+    {
+        $skills = self::all();
+        $skillsArray = $skills->toArray();
+
+        return $skillsArray;
+    }
 }
