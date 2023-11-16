@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Route;
 
 Route::get('login', ['as' => 'auth.login', 'uses' => 'LoginController@showLoginForm']);
 Route::post('login', ['as' => 'auth.login.post', 'uses' => 'LoginController@login']);

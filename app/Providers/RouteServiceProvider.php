@@ -71,6 +71,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('category', Category::class);
         Route::model('page', Page::class);
         Route::model('user', User::class);
+        Route::model('fruit', \App\Models\Fruit::class);
         /** GENERATOR_MODEL_BINDER **/
     }
 
@@ -90,6 +91,12 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('pSlug', function ($slug) {
             return Page::with('parent')->where('slug', $slug)->firstOrFail();
+        });
+        Route::bind('fruitSlug', function ($slug) {
+            return \App\Models\Fruit::where('slug', $slug)->firstOrFail();
+        });
+        Route::bind('skillSlug', function ($slug) {
+            return \App\Models\Skill::where('slug', $slug)->firstOrFail();
         });
         /** GENERATOR_PARAMETER_BINDER **/
     }

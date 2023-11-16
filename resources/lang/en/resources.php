@@ -71,6 +71,7 @@ return [
             'description'  => 'Description',
             'parent_id'    => 'Parent',
             'title'        => 'Title',
+            'image'         => 'update'
         ],
         'index'  => 'Pages',
         'show'   => 'Show page'
@@ -78,6 +79,11 @@ return [
     'parent' => [
         'fields' => [
             'title' => 'Parent Page',
+        ]
+    ],
+    'admin' => [
+        'fields' => [
+            'image' => 'Image'
         ]
     ],
     'user' => [
@@ -93,5 +99,28 @@ return [
         ],
         'index'  => 'Users',
         'show'   => 'Show user'
+    ],
+    'fruit' => [
+        'create' => 'Create a Fruit',
+        'edit'   => 'Edit a Fruit',
+        'fields' => [
+            'content'     => 'Content',
+            'description' => 'Description',
+            'title'       => 'Title'
+        ],
+        'index'  => 'Fruits',
+        'show'   => 'Show a Fruit'
+    ],
+    'skill' => [
+        'create' => 'Create a Skills',
+        'edit'   => 'Edit a Skill',
+        'fields' => [
+            'content'     => 'Content',
+            'description' => 'Description',
+            'title'       => 'Title',
+            'image' => 'Image'
+        ],
+        'index'  => 'Skills',
+        'show'   => 'Show a Skill',
     ]
 ];
