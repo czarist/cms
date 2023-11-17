@@ -10,14 +10,16 @@
                 <div class="file">
                     <img width="200" id="image-src" src="{{ ${$resource}->$attribute }}" alt="">
                 </div>
+                <input type="hidden" value="{{ ${$resource}->$attribute }}" id="{{ $attribute }}"
+                    name="{{ $attribute }}">
             @else
                 <div class="file-name is-hidden"></div>
                 <div class="file">
                     <img width="200" id="image-src" src="" alt="">
                 </div>
+                <input type="hidden" id="{{ $attribute }}" name="{{ $attribute }}">
             @endif
         </label>
-        <input type="hidden" id="{{ $attribute }}" name="{{ $attribute }}">
     </div>
 </div>
 
@@ -36,13 +38,13 @@
                 const base64String = e.target.result;
 
                 hiddenInput.value = base64String;
-                image.src = base64String; 
+                image.src = base64String;
             };
 
             reader.readAsDataURL(selectedFile);
         } else {
             hiddenInput.value = '';
-            image.src = ''; 
+            image.src = '';
         }
     });
 </script>

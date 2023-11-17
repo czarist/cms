@@ -122,5 +122,24 @@ return [
         ],
         'index'  => 'Skills',
         'show'   => 'Show a Skill',
+    ],
+    'project' => [
+        'create' => 'Create a Project',
+        'edit'   => 'Edit a Project',
+        'fields' => [
+            'content'         => 'Content',
+            'description'     => 'Description',
+            'title'           => 'Title',
+            'url'             => 'URL',
+            'designer'        => 'Designer',
+            'designer-url'    => 'Designer URL',
+            'subtitle'        => 'Subtitle',
+            'intermediary'    => 'Intermediary',
+            'intermediary-url'    => 'intermediary URL',
+            'plataform'    => 'Plataform',
+            'hexabg'    => 'Background Color'
+        ],
+        'index'  => 'Projects',
+        'show'   => 'Show a Project'
     ]
 ];

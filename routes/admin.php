@@ -8,3 +8,4 @@ Route::resource('page', 'PageController');
 Route::resource('user', 'UserController');
 Route::resource('fruit', 'FruitController');
 Route::resource('skill', 'SkillController');
+Route::resource('project', 'ProjectController');

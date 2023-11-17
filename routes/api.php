@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Api\ApiSkillController;
+use App\Http\Controllers\Admin\Api\ApiProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ use App\Http\Controllers\Admin\Api\ApiSkillController;
 
 
 Route::get('/admin/skills', [ApiSkillController::class, 'index']);
+Route::get('/admin/projects', [ApiProjectController::class, 'index']);
