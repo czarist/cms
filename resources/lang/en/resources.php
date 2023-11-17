@@ -8,19 +8,6 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'article' => [
-        'create' => 'Create article',
-        'edit'   => 'Edit article',
-        'fields' => [
-            'category_id'  => 'Category',
-            'content'      => 'Content',
-            'description'  => 'Description',
-            'published_at' => 'Published At',
-            'title'        => 'Article Title'
-        ],
-        'index'  => 'Articles',
-        'show'   => 'Show article'
-    ],
     'category' => [
         'create' => 'Create category',
         'edit'   => 'Edit category',
@@ -42,14 +29,9 @@ return [
             'chart_country'   => 'Country',
             'chart_region'    => 'Region',
             'chart_visitors'  => 'Visitors',
-            'entrance_pages'  => 'Entrance',
-            'exit_pages'      => 'Exit',
             'keywords'        => 'Keywords',
             'os'              => 'OS',
-            'page_visits'     => 'Page Visits',
-            'pages'           => 'Pages',
             'region_visitors' => 'Region Visitors',
-            'time_pages'      => 'Time',
             'total_visits'    => 'Total Visits',
             'traffic_sources' => 'Traffic Sources',
             'unique_visits'   => 'Unique Visits',
@@ -62,24 +44,6 @@ return [
     ],
     'elfinder' => [
         'index' => 'File Manager',
-    ],
-    'page' => [
-        'create' => 'Create page',
-        'edit'   => 'Edit page',
-        'fields' => [
-            'content'      => 'Content',
-            'description'  => 'Description',
-            'parent_id'    => 'Parent',
-            'title'        => 'Title',
-            'image'         => 'update'
-        ],
-        'index'  => 'Pages',
-        'show'   => 'Show page'
-    ],
-    'parent' => [
-        'fields' => [
-            'title' => 'Parent Page',
-        ]
     ],
     'admin' => [
         'fields' => [
@@ -99,17 +63,6 @@ return [
         ],
         'index'  => 'Users',
         'show'   => 'Show user'
-    ],
-    'fruit' => [
-        'create' => 'Create a Fruit',
-        'edit'   => 'Edit a Fruit',
-        'fields' => [
-            'content'     => 'Content',
-            'description' => 'Description',
-            'title'       => 'Title'
-        ],
-        'index'  => 'Fruits',
-        'show'   => 'Show a Fruit'
     ],
     'skill' => [
         'create' => 'Create a Skills',

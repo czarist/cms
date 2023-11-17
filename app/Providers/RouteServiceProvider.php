@@ -2,9 +2,7 @@
 
 namespace App\Providers;
 
-use App\Models\Article;
 use App\Models\Category;
-use App\Models\Page;
 use App\Models\User;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -67,12 +65,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     private function bootRouteModelBinders()
     {
-        Route::model('article', Article::class);
         Route::model('category', Category::class);
         Route::model('page', Page::class);
         Route::model('user', User::class);
-        Route::model('fruit', \App\Models\Fruit::class);
-        Route::model('skill', \App\Models\Skill ::class);
+        Route::model('skill', \App\Models\Skill::class);
         Route::model('project', \App\Models\Project::class);
         /** GENERATOR_MODEL_BINDER **/
     }
@@ -85,17 +81,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     private function bootRouteParameterBinders()
     {
-        Route::bind('aSlug', function ($slug) {
-            return Article::with('category')->where('slug', $slug)->firstOrFail();
-        });
         Route::bind('cSlug', function ($slug) {
             return Category::with('articles')->where('slug', $slug)->firstOrFail();
-        });
-        Route::bind('pSlug', function ($slug) {
-            return Page::with('parent')->where('slug', $slug)->firstOrFail();
-        });
-        Route::bind('fruitSlug', function ($slug) {
-            return \App\Models\Fruit::where('slug', $slug)->firstOrFail();
         });
         Route::bind('skillSlug', function ($slug) {
             return \App\Models\Skill::where('slug', $slug)->firstOrFail();

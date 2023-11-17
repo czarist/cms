@@ -1,4 +1,4 @@
-# Laravel 9 Simple CMS
+# Personal Portfolio CMS
 Basic boilerplate content management system for starters, supports Laravel 9.0.
 
 -----

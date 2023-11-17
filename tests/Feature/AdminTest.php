@@ -27,15 +27,6 @@ class AdminTest extends TestCase
     /**
      * @group admin-crud-tests
      */
-    public function testArticlesCrud()
-    {
-        $this->signIn();
-        $this->visit('admin')->click('Articles')->seePageIs('admin/article');
-    }
-
-    /**
-     * @group admin-crud-tests
-     */
     public function testCategoriesCrud()
     {
         $this->signIn();
