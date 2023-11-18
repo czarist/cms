@@ -94,5 +94,19 @@ return [
         ],
         'index'  => 'Projects',
         'show'   => 'Show a Project'
+    ],
+    'certificate' => [
+        'create' => 'Create a Certificate',
+        'edit'   => 'Edit a Certificate',
+        'fields' => [
+            'content'     => 'Content',
+            'description' => 'Description',
+            'title'       => 'Title',
+            'subtitle' => 'Subtitle',
+            'url' => 'URL',
+            'hexabg' => 'Background Image'
+        ],
+        'index'  => 'Certificates',
+        'show'   => 'Show a Certificate'
     ]
 ];

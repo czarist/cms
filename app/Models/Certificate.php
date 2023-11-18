@@ -4,13 +4,13 @@ namespace App\Models;
 
 use App\Base\SluggableModel;
 
-class Project extends SluggableModel
+class Certificate extends SluggableModel
 {
     /**
      * @return string
      */
     public function getLinkAttribute(): string
     {
-        return route('project', ['projectSlug' => $this->slug]);
+        return route('certificate', ['certificateSlug' => $this->slug]);
     }
 }

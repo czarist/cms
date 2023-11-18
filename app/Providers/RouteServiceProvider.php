@@ -70,6 +70,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('user', User::class);
         Route::model('skill', \App\Models\Skill::class);
         Route::model('project', \App\Models\Project::class);
+        Route::model('certificate', \App\Models\Certificate::class);
         /** GENERATOR_MODEL_BINDER **/
     }
 
@@ -89,6 +90,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('projectSlug', function ($slug) {
             return \App\Models\Project::where('slug', $slug)->firstOrFail();
+        });
+        Route::bind('certificateSlug', function ($slug) {
+            return \App\Models\Certificate::where('slug', $slug)->firstOrFail();
         });
         /** GENERATOR_PARAMETER_BINDER **/
     }
