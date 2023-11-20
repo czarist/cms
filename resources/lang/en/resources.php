@@ -14,7 +14,8 @@ return [
         'fields' => [
             'article_count' => 'Article Count',
             'description'   => 'Description',
-            'title'         => 'Category Title'
+            'title'         => 'Category Title',
+            'type'          => 'Type',
         ],
         'index'  => 'Categories',
         'show'   => 'Show category'

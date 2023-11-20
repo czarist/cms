@@ -121,34 +121,6 @@ if (!function_exists('getRobots')) {
     }
 }
 
-if (!function_exists('getMenu')) {
-    /**
-     * @return mixed
-     * @throws \Exception
-     */
-    function getMenu()
-    {
-        return cache()->remember('menu', 60, function () {
-            return \App\Models\Page::where('parent_id', null)->with('children')->get();
-        });
-    }
-}
-
-if (!function_exists('getFooterArticles')) {
-    /**
-     * @param int $limit
-     *
-     * @return mixed
-     * @throws \Exception
-     */
-    function getFooterArticles($limit = 3)
-    {
-        return cache()->remember('footer_articles', 60, function () use ($limit) {
-            return \App\Models\Article::published()->limit($limit)->get();
-        });
-    }
-}
-
 if (!function_exists('active')) {
     /**
      * @param object $object

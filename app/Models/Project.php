@@ -13,4 +13,9 @@ class Project extends SluggableModel
     {
         return route('project', ['projectSlug' => $this->slug]);
     }
+
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

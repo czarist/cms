@@ -18,14 +18,7 @@ class CategoryDataTable extends DataTableController
      * @var array
      */
     protected $columns = ['title'];
-
-    /**
-     * Columns to show relations count
-     *
-     * @var array
-     */
-    protected $count_join_columns = ['article_count'];
-
+    
     /**
      * @var bool
      */
@@ -38,10 +31,6 @@ class CategoryDataTable extends DataTableController
      */
     public function query()
     {
-        return $this->applyScopes(
-            Category::leftJoin('articles', 'categories.id', '=', 'articles.category_id')
-                ->selectRaw('categories.*, count(articles.id) as article_count')
-                ->groupBy('categories.id')
-        );
+        return $this->applyScopes(Category::query());
     }
 }
