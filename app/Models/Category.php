@@ -36,4 +36,17 @@ class Category extends SluggableModel
     {
         return route('category', ['cSlug' => $this->slug]);
     }
+
+    /**
+     * Retorna todos os registros da tabela "categories" como um array.
+     *
+     * @return array
+     */
+    public static function getAllCategoriesAsArray(): array
+    {
+        $categories = self::all();
+        $categoriesArray = $categories->toArray();
+
+        return $categoriesArray;
+    }
 }
