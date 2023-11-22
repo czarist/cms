@@ -17,14 +17,12 @@ class ApiProjectController extends Controller
     {
         $perPage = $request->input('per_page', 6);
         $projects = Project::with('categories')->paginate($perPage);
-        $items[] = $projects->items();
-
         $responseData = [
             'total' => $projects->total(),
             'per_page' => $projects->perPage(),
             'current_page' => $projects->currentPage(),
             'last_page' => $projects->lastPage(),
-            'data' => $items,
+            'data' => $projects->items(),
         ];
 
         return response()->json($responseData);

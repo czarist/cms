@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Str;
-use Storage;
+use Illuminate\Support\Facades\Storage;
 
 abstract class AdminController extends Controller
 {

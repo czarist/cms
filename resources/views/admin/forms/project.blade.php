@@ -2,6 +2,14 @@
 
 @section('content')
     @include('partials.admin.form.init')
+
+    @if (${$resource} !== null)
+        @include('partials.admin.form.categories', [
+            'attribute' => 'categories',
+            'categories' => $project['categories'],
+        ])
+    @endif
+
     @foreach (['title', 'description', 'url', 'subtitle', 'designer', 'designer-url', 'intermediary', 'intermediary-url', 'plataform'] as $a)
         @include('partials.admin.form.text', ['attribute' => $a])
     @endforeach

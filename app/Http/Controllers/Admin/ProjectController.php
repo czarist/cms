@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Base\Controllers\AdminController;
 use App\Http\Controllers\Admin\DataTables\ProjectDataTable;
 use App\Models\Project;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProjectController extends AdminController
@@ -23,7 +24,8 @@ class ProjectController extends AdminController
         'plataform' => 'required|string|max:200',
         'hexabg' => 'required|string|max:200',
         'icon' => 'required|string',
-        'description' => 'required|string|max:200'
+        'description' => 'required|string|max:200',
+        'categories' => 'string'
     ];
 
     /**
@@ -44,6 +46,7 @@ class ProjectController extends AdminController
         return view('admin.forms.project', $this->formVariables('project', null));
     }
 
+
     /**
      * @param \Illuminate\Http\Request $request
      *
@@ -52,6 +55,15 @@ class ProjectController extends AdminController
      */
     public function store(Request $request)
     {
+        // $project = new Project();
+        // $project->save();
+
+        // $selectedCategories = $request->input('categories', []);
+
+        // if (!empty($selectedCategories)) {
+        //     $project->categories()->attach($selectedCategories);
+        // }
+
         return $this->createFlashRedirect(Project::class, $request);
     }
 
@@ -72,8 +84,19 @@ class ProjectController extends AdminController
      */
     public function edit(Project $project)
     {
+        $allCategories = Category::where('type', 'project')->get();
+
+        $selectedCategories = $project->categories->pluck('id')->toArray();
+
+        foreach ($allCategories as $category) {
+            $category['selected'] = in_array($category->id, $selectedCategories);
+        }
+
+        $project['categories'] = $allCategories->toArray();
+
         return view('admin.forms.project', $this->formVariables('project', $project));
     }
+
 
     /**
      * @param \App\Models\Project $project
@@ -84,8 +107,20 @@ class ProjectController extends AdminController
      */
     public function update(Project $project, Request $request)
     {
+        $selectedCategoriesJson = $request->input('categories', '[]');
+        $selectedCategories = json_decode($selectedCategoriesJson, true);
+
+        $projectCategories = $project->categories->pluck('id')->toArray();
+
+        $categoriesToAdd = array_diff($selectedCategories, $projectCategories);
+        $project->categories()->attach($categoriesToAdd);
+
+        $categoriesToRemove = array_diff($projectCategories, $selectedCategories);
+        $project->categories()->detach($categoriesToRemove);
+
         return $this->saveFlashRedirect($project, $request);
     }
+
 
     /**
      * @param \App\Models\Project $project

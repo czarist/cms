@@ -91,7 +91,8 @@ return [
             'intermediary'    => 'Intermediary',
             'intermediary-url'    => 'intermediary URL',
             'plataform'    => 'Plataform',
-            'hexabg'    => 'Background Color'
+            'hexabg'    => 'Background Color',
+            'categories' => 'Categories'
         ],
         'index'  => 'Projects',
         'show'   => 'Show a Project'
