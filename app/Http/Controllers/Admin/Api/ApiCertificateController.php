@@ -16,7 +16,7 @@ class ApiCertificateController extends Controller
     public function index(Request $request)
     {
         $perPage = $request->input('per_page', 6); 
-        $certificates = Certificate::paginate($perPage);
+        $certificates = Certificate::with('categories')->paginate($perPage);
 
         $responseData = [
             'total' => $certificates->total(),

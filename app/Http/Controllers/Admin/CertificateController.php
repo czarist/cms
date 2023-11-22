@@ -6,6 +6,7 @@ use App\Base\Controllers\AdminController;
 use App\Http\Controllers\Admin\DataTables\CertificateDataTable;
 use App\Models\Certificate;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CertificateController extends AdminController
 {
@@ -66,6 +67,16 @@ class CertificateController extends AdminController
      */
     public function edit(Certificate $certificate)
     {
+        $allCategories = Category::where('type', 'certification')->get();
+
+        $selectedCategories = $certificate->categories->pluck('id')->toArray();
+
+        foreach ($allCategories as $category) {
+            $category['selected'] = in_array($category->id, $selectedCategories);
+        }
+
+        $certificate['categories'] = $allCategories->toArray();
+
         return view('admin.forms.certificate', $this->formVariables('certificate', $certificate));
     }
 
@@ -78,6 +89,17 @@ class CertificateController extends AdminController
      */
     public function update(Certificate $certificate, Request $request)
     {
+        $selectedCategoriesJson = $request->input('categories', '[]');
+        $selectedCategories = json_decode($selectedCategoriesJson, true);
+
+        $certificateCategories = $certificate->categories->pluck('id')->toArray();
+
+        $categoriesToAdd = array_diff($selectedCategories, $certificateCategories);
+        $certificate->categories()->attach($categoriesToAdd);
+
+        $categoriesToRemove = array_diff($certificateCategories, $selectedCategories);
+        $certificate->categories()->detach($categoriesToRemove);
+
         return $this->saveFlashRedirect($certificate, $request);
     }
 

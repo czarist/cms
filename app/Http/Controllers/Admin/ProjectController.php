@@ -55,15 +55,6 @@ class ProjectController extends AdminController
      */
     public function store(Request $request)
     {
-        // $project = new Project();
-        // $project->save();
-
-        // $selectedCategories = $request->input('categories', []);
-
-        // if (!empty($selectedCategories)) {
-        //     $project->categories()->attach($selectedCategories);
-        // }
-
         return $this->createFlashRedirect(Project::class, $request);
     }
 

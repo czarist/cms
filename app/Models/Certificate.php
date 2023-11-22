@@ -13,4 +13,9 @@ class Certificate extends SluggableModel
     {
         return route('certificate', ['certificateSlug' => $this->slug]);
     }
+    
+    public function categories()
+    {
+        return $this->belongsToMany(Category::class);
+    }
 }

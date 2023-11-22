@@ -106,7 +106,8 @@ return [
             'title'       => 'Title',
             'subtitle' => 'Subtitle',
             'url' => 'URL',
-            'hexabg' => 'Background Image'
+            'hexabg' => 'Background Image',
+            'categories' => 'Categories'
         ],
         'index'  => 'Certificates',
         'show'   => 'Show a Certificate'

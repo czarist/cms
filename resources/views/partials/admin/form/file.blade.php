@@ -1,7 +1,8 @@
 <div class="field">
     <div class="file is-large has-name">
         <label class="file-label">
-            <input class="file-input" type="file" id="{{ $attribute }}-file" name="{{ $attribute }}-update">
+            <input class="file-input" type="file" id="{{ $attribute }}-file" name="{{ $attribute }}-update"
+                accept="image/jpeg, image/png">
             <div class="file-cta">
                 <div class="file-icon">{!! icon('upload-cloud') !!}</div>
                 <div class="file-label">Upload</div>
