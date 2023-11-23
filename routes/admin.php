@@ -7,3 +7,4 @@ Route::resource('user', 'UserController');
 Route::resource('skill', 'SkillController');
 Route::resource('project', 'ProjectController');
 Route::resource('certificate', 'CertificateController');
+Route::resource('job', 'JobController');

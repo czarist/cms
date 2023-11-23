@@ -1,4 +1,4 @@
-												<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+																<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="container is-fluid">
         <div class="navbar-brand">
             <a class="navbar-item" href="{{ route('root') }}">
@@ -21,6 +21,7 @@
                 @include('partials.admin.nav.dropdown', ['resource' => 'skill', 'icon' => 'more-horizontal'])
 				@include('partials.admin.nav.dropdown', ['resource' => 'project', 'icon' => 'file'])
 				@include('partials.admin.nav.dropdown', ['resource' => 'certificate', 'icon' => 'book'])
+				@include('partials.admin.nav.dropdown', ['resource' => 'job', 'icon' => 'more-horizontal'])
 				<!--NAVIGATION_FLAG-->
                 @include('partials.admin.nav.single', ['link' => route('elfinder.index'), 'text' => __('admin.elfinder.index'), 'icon' => 'film'])
                 @include('partials.admin.nav.logout', ['class' => 'is-hidden-tablet'])

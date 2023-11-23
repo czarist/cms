@@ -111,5 +111,23 @@ return [
         ],
         'index'  => 'Certificates',
         'show'   => 'Show a Certificate'
+    ],
+    'job' => [
+        'create' => 'Create a Job',
+        'edit'   => 'Edit a Job',
+        'fields' => [
+            'content'     => 'Content',
+            'description' => 'Description',
+            'title'       => 'Title',
+            'order'       => 'Order',
+            'current_company'       => 'Current Company',
+            'company'       => 'Company',
+            'responsibilities'       => 'Responsibilities',
+            'date_init'       => 'Date Init',
+            'date_end'       => 'Date End',
+
+        ],
+        'index'  => 'Jobs',
+        'show'   => 'Show a Job'
     ]
 ];
