@@ -26,7 +26,8 @@ class CreateProjectsTable extends Migration
             $table->string('plataform');
             $table->string('hexabg');
             $table->longText('icon');
-            $table->text('description');
+            $table->text('description_pt');
+            $table->text('description_en');
             $table->timestamps();
         });
     }

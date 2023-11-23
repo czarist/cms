@@ -25,7 +25,8 @@ class ProjectController extends AdminController
         'plataform' => 'required|string|max:200',
         'hexabg' => 'required|string|max:200',
         'icon' => 'required|string',
-        'description' => 'required|string|max:200',
+        'description_en' => 'required|string|max:200',
+        'description_pt' => 'required|string|max:200',
         'categories' => 'string'
     ];
 

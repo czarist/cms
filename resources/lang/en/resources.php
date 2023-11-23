@@ -82,7 +82,8 @@ return [
         'edit'   => 'Edit a Project',
         'fields' => [
             'content'         => 'Content',
-            'description'     => 'Description',
+            'description_pt' => 'Description PT',
+            'description_en' => 'Description EN',
             'title'           => 'Title',
             'url'             => 'URL',
             'designer'        => 'Designer',
@@ -117,12 +118,15 @@ return [
         'edit'   => 'Edit a Job',
         'fields' => [
             'content'     => 'Content',
-            'description' => 'Description',
+            'description_pt' => 'Description PT',
+            'description_en' => 'Description EN',
             'title'       => 'Title',
             'order'       => 'Order',
             'current_company'       => 'Current Company',
             'company'       => 'Company',
-            'responsibilities'       => 'Responsibilities',
+            'responsibilities_pt'       => 'Responsibilities PT',
+            'responsibilities_en'       => 'Responsibilities EN',
+
             'date_init'       => 'Date Init',
             'date_end'       => 'Date End',
             'type'           => 'Type',
