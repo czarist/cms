@@ -125,7 +125,8 @@ return [
             'responsibilities'       => 'Responsibilities',
             'date_init'       => 'Date Init',
             'date_end'       => 'Date End',
-
+            'type'           => 'Type',
+            'site'           => 'Site',
         ],
         'index'  => 'Jobs',
         'show'   => 'Show a Job'

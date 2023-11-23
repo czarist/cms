@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DataTables\ProjectDataTable;
 use App\Models\Project;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProjectController extends AdminController
 {
@@ -121,6 +122,8 @@ class ProjectController extends AdminController
      */
     public function destroy(Project $project)
     {
+        DB::table('category_project')->where('project_id', $project->id)->delete();
+
         return $this->destroyFlashRedirect($project);
     }
 }

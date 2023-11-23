@@ -20,7 +20,9 @@ class JobController extends AdminController
         'responsibilities' => 'required|string|max:160',
         'order' => 'nullable|integer',
         'current_company' => 'required|integer',
-        'company_image' => 'required|string'
+        'company_image' => 'required|string',
+        'type' => 'required|string|in:job,client,startup',
+        'site' => 'string'
     ];
 
     /**

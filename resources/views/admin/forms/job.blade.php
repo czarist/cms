@@ -7,11 +7,16 @@
         @include('partials.admin.form.number', ['attribute' => 'order'])
     @endif
 
+    @include('partials.admin.form.select', [
+        'attribute' => 'type',
+        'selectValues' => ['job', 'client', 'startup'],
+    ])
+
     @include('partials.admin.form.boolean', [
         'attribute' => 'current_company',
     ])
 
-    @foreach (['title', 'company', 'responsibilities'] as $a)
+    @foreach (['title', 'company', 'responsibilities', 'site'] as $a)
         @include('partials.admin.form.text', ['attribute' => $a])
     @endforeach
 

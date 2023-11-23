@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\DataTables\CertificateDataTable;
 use App\Models\Certificate;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 
 class CertificateController extends AdminController
 {
@@ -111,6 +112,8 @@ class CertificateController extends AdminController
      */
     public function destroy(Certificate $certificate)
     {
+        DB::table('category_certificate')->where('certificate_id', $certificate->id)->delete();
+
         return $this->destroyFlashRedirect($certificate);
     }
 }
