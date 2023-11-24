@@ -72,6 +72,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('project', \App\Models\Project::class);
         Route::model('certificate', \App\Models\Certificate::class);
         Route::model('job', \App\Models\Job::class);
+        Route::model('education', \App\Models\Education::class);
         /** GENERATOR_MODEL_BINDER **/
     }
 
@@ -97,6 +98,9 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::bind('jobSlug', function ($slug) {
             return \App\Models\Job::where('slug', $slug)->firstOrFail();
+        });
+        Route::bind('educationSlug', function ($slug) {
+            return \App\Models\Education::where('slug', $slug)->firstOrFail();
         });
         /** GENERATOR_PARAMETER_BINDER **/
     }

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\Api\ApiProjectController;
 use App\Http\Controllers\Admin\Api\ApiCertificateController;
 use App\Http\Controllers\Admin\Api\ApiCategoryController;
 use App\Http\Controllers\Admin\Api\ApiJobController;
+use App\Http\Controllers\Admin\Api\ApiEducationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,4 @@ Route::get('/admin/projects', [ApiProjectController::class, 'index']);
 Route::get('/admin/certificates', [ApiCertificateController::class, 'index']);
 Route::get('/admin/categories', [ApiCategoryController::class, 'index']);
 Route::get('/admin/jobs', [ApiJobController::class, 'index']);
+Route::get('/admin/education', [ApiEducationController::class, 'index']);

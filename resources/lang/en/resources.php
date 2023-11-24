@@ -134,5 +134,24 @@ return [
         ],
         'index'  => 'Jobs',
         'show'   => 'Show a Job'
+    ],
+    'education' => [
+        'create' => 'Create a Education',
+        'edit'   => 'Edit a Education',
+        'fields' => [
+          'content'     => 'Content',
+          'description' => 'Description',
+          'university_pt'       => 'University PT',
+          'university_en'       => 'University EN',
+          'course_pt'       => 'Course PT',
+          'course_en'       => 'Course EN',
+          'title'       => 'Title',
+          'status_en'       => 'Status',
+          'date_init'       => 'Date Init',
+          'date_end'       => 'Date End',
+
+        ],
+        'index'  => 'Education',
+        'show'   => 'Show a Education'
     ]
 ];
