@@ -19,6 +19,11 @@ use App\Http\Controllers\Admin\Api\ApiEducationController;
 |
 */
 
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+
 Route::get('/admin/skills', [ApiSkillController::class, 'index']);
 Route::get('/admin/projects', [ApiProjectController::class, 'index']);
 Route::get('/admin/certificates', [ApiCertificateController::class, 'index']);
